@@ -1,5 +1,7 @@
 # Infobip Spring Bean Validation
 
+[![Build Status](https://travis-ci.org/infobip/infobip-spring-bean-validation.svg?branch=master)](https://travis-ci.org/infobip/infobip-spring-bean-validation)
+
 Library which provides new features on top of Hibernate Validator and Spring Boot Validation starter.
 
 ## Contents
