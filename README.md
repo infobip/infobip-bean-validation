@@ -35,9 +35,9 @@ To remap all ConstraintViolationExceptions to a custom exception simply declare 
 
 ```java
 @Bean
-    public ConstraintViolationExceptionMapper<IllegalArgumentException> constraintViolationExceptionMapper() {
-        return e -> new IllegalArgumentException(e.getMessage());
-    }
+public ConstraintViolationExceptionMapper<IllegalArgumentException> constraintViolationExceptionMapper() {
+    return e -> new IllegalArgumentException(e.getMessage());
+}
 ```
 
 ### <a name="HibernateValidatorConfigurationStrategy"></a> Hibernate Validator Configuration Strategy:
