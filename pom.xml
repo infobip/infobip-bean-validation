@@ -7,6 +7,21 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/infobip/infobip-spring-bean-validation.git</url>
+		<connection>scm:git:git://github.com:infobip/infobip-spring-bean-validation.git</connection>
+		<developerConnection>scm:git:git@github.com:infobip/infobip-spring-bean-validation.git</developerConnection>
+	</scm>
+
 	<modules>
 		<module>infobip-spring-bean-validation-api</module>
 		<module>infobip-spring-bean-validation-boot-starter</module>
