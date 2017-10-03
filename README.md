@@ -157,7 +157,7 @@ public class MustNotBeTopSecretValidator implements ConstraintValidator<MustNotB
 }
 ```
 
-Configuration:
+Custom validators are automatically injected into Hibernate Validator Configuration, here's an example of how you'd do it manually:
 
 ```java
 @Bean
