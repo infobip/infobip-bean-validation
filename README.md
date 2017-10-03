@@ -46,9 +46,8 @@ By defining a bean of type HibernateConfigurationStrategy you can programmatical
 
 ```java
 @Bean
-public HibernateConfigurationStrategy hibernateConfigurationStrategy(Clock clock) {
-     
-    return configuration -> configuration.timeProvider(clock::millis);
+public HibernateValidatorConfigurationStrategy hibernateValidatorConfigurationStrategy() {
+    return configuration -> configuration.clockProvider(Clock::systemUTC);
 }
 ```
 
