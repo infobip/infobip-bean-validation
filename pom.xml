@@ -14,7 +14,7 @@
 	</description>
 
 	<organization>
-		<name>Infobip</name>
+		<name>Infobip Ltd.</name>
 		<url>https://www.infobip.com/</url>
 	</organization>
 
@@ -34,6 +34,21 @@
 		<connection>scm:git:git://github.com:infobip/infobip-spring-bean-validation.git</connection>
 		<developerConnection>scm:git:git@github.com:infobip/infobip-spring-bean-validation.git</developerConnection>
 	</scm>
+
+	<developers>
+		<developer>
+			<id>lpandzic</id>
+			<name>Lovro Pandžić</name>
+			<email>lovro.pandzic@infobip.com</email>
+			<organization>Infobip Ltd.</organization>
+		</developer>
+		<developer>
+			<id>tstavinoha</id>
+			<name>Tin Stavinoha</name>
+			<email>tin.stavinoha@infobip.com</email>
+			<organization>Infobip Ltd.</organization>
+		</developer>
+	</developers>
 
 	<modules>
 		<module>infobip-spring-bean-validation-api</module>
