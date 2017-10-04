@@ -33,6 +33,7 @@
 
 		<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
 		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<build>
@@ -81,4 +82,17 @@
 			</build>
 		</profile>
 	</profiles>
+
+	<distributionManagement>
+		<repository>
+			<id>ossrh-releases</id>
+			<name>SonatypeReleases</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+		<snapshotRepository>
+			<id>ossrh-snapshots</id>
+			<name>SonatypeSnapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
