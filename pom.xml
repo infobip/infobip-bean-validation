@@ -7,6 +7,19 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<name>Infobip Spring Bean Validation</name>
+
+	<description>
+		Library which provides new features on top of Hibernate Validator and Spring Boot Validation starter.
+	</description>
+
+	<organization>
+		<name>Infobip</name>
+		<url>https://www.infobip.com/</url>
+	</organization>
+
+	<url>https://github.com/infobip/infobip-spring-bean-validation</url>
+
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
