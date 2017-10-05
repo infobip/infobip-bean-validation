@@ -6,6 +6,7 @@ import org.hibernate.validator.HibernateValidatorConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 
 import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintViolationException;
 import java.util.*;
 
 @AutoConfigureBefore(ValidationAutoConfiguration.class)
@@ -24,15 +26,16 @@ public class BeanValidationAutoConfiguration {
     private HibernateValidatorConfigurationStrategy hibernateValidatorConfigurationStrategy;
 
     @Autowired(required = false)
-    private ConstraintViolationExceptionMapper<?> exceptionMapper;
-
-    @Autowired(required = false)
     private List<? extends ConstraintValidator<?, ?>> validators;
 
+    @ConditionalOnMissingBean(ConstraintViolationExceptionMapper.class)
     @Bean
-    public MethodValidationPostProcessor methodValidationPostProcessor() {
-        ConstraintViolationExceptionMapper<?> exceptionMapper = Optional.<ConstraintViolationExceptionMapper>ofNullable(
-                this.exceptionMapper).orElseGet(() -> e -> e);
+    public ConstraintViolationExceptionMapper<ConstraintViolationException> defaultConstraintViolationExceptionMapper() {
+        return e -> e;
+    }
+
+    @Bean
+    public MethodValidationPostProcessor methodValidationPostProcessor(ConstraintViolationExceptionMapper<?> exceptionMapper) {
         MethodValidationPostProcessor postProcessor = new CustomMethodValidationPostProcessor(exceptionMapper);
         postProcessor.setValidator(localValidatorFactoryBean());
         return postProcessor;
