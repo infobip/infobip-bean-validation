@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.infobip</groupId>
-	<artifactId>infobip-spring-bean-validation</artifactId>
+	<artifactId>infobip-bean-validation</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -51,8 +51,8 @@
 	</developers>
 
 	<modules>
-		<module>infobip-spring-bean-validation-api</module>
-		<module>infobip-spring-bean-validation-boot-starter</module>
+		<module>infobip-bean-validation-api</module>
+		<module>infobip-bean-validation-spring-boot-starter</module>
 	</modules>
 
 	<properties>
