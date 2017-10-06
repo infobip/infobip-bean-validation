@@ -4,10 +4,10 @@
 
 	<groupId>com.infobip</groupId>
 	<artifactId>infobip-bean-validation</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>Infobip Spring Bean Validation</name>
+	<name>Infobip Bean Validation</name>
 
 	<description>
 		Library which provides new features on top of Hibernate Validator and Spring Boot Validation starter.
@@ -18,7 +18,7 @@
 		<url>https://www.infobip.com/</url>
 	</organization>
 
-	<url>https://github.com/infobip/infobip-spring-bean-validation</url>
+	<url>https://github.com/infobip/infobip-bean-validation</url>
 
 	<licenses>
 		<license>
@@ -30,9 +30,9 @@
 	</licenses>
 
 	<scm>
-		<url>https://github.com/infobip/infobip-spring-bean-validation.git</url>
-		<connection>scm:git:git://github.com:infobip/infobip-spring-bean-validation.git</connection>
-		<developerConnection>scm:git:git@github.com:infobip/infobip-spring-bean-validation.git</developerConnection>
+		<url>https://github.com/infobip/infobip-bean-validation.git</url>
+		<connection>scm:git:git://github.com:infobip/infobip-bean-validation.git</connection>
+		<developerConnection>scm:git:git@github.com:infobip/infobip-bean-validation.git</developerConnection>
 	</scm>
 
 	<developers>
