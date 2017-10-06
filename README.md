@@ -1,8 +1,8 @@
-# Infobip Spring Bean Validation
+# Infobip Bean Validation
 
-[![Build Status](https://travis-ci.org/infobip/infobip-spring-bean-validation.svg?branch=master)](https://travis-ci.org/infobip/infobip-spring-bean-validation)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.infobip/infobip-spring-bean-validation-boot-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.infobip/infobip-spring-bean-validation-boot-starter)
-[![Coverage Status](https://coveralls.io/repos/github/infobip/infobip-spring-bean-validation/badge.svg?branch=master)](https://coveralls.io/github/infobip/infobip-spring-bean-validation?branch=master)
+[![Build Status](https://travis-ci.org/infobip/infobip-bean-validation.svg?branch=master)](https://travis-ci.org/infobip/infobip-bean-validation)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.infobip/infobip-bean-validation-boot-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.infobip/infobip-bean-validation-boot-starter)
+[![Coverage Status](https://coveralls.io/repos/github/infobip/infobip-bean-validation/badge.svg?branch=master)](https://coveralls.io/github/infobip/infobip-bean-validation?branch=master)
 
 Library which provides new features on top of Hibernate Validator and Spring Boot Validation starter.
 
