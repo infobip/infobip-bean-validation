@@ -8,22 +8,16 @@ Library which provides new features on top of Hibernate Validator and Spring Boo
 
 ## Contents
 
-1. [Requirements](#Requirements)
-2. [Features and examples](#FeaturesAndExamples)
+1. [Features and examples](#FeaturesAndExamples)
     * [Basic](#Basic)
     * [SimpleConstraintValidator](#SimpleConstraintValidator)
     * [ConstraintViolationException mapping](#ConstraintViolationExceptionMapping)
     * [Hibernate Validator Configuration Strategy](#HibernateValidatorConfigurationStrategy)
     * [Validator bean injection](#ValidatorBeanInjection)
     * [Decoupling of validation annotations and validators](#DecouplingOfValidationAnnotationsAndValidators)
+2. [Requirements](#Requirements)
 3. [Contributing](#Contributing)
 4. [License](#License)
-
-## <a name="Requirements"></a> Requirements:
-
-- Java 8
-- Hibernate Validator
-- Spring Boot (without Boot you will have to import BeanValidationAutoConfiguration manually)
 
 ## <a name="FeaturesAndExamples"></a> Features and examples:
 
@@ -171,6 +165,12 @@ public HibernateConfigurationStrategy hibernateConfigurationStrategy() {
                                          .validatedBy(MustNotBeTopSecretValidator.class);
 }
 ```
+
+## <a name="Requirements"></a> Requirements:
+
+- Java 8
+- Hibernate Validator
+- Spring Boot (without Boot you will have to import BeanValidationAutoConfiguration manually)
 
 ## <a name="Contributing"></a> Contributing
 
