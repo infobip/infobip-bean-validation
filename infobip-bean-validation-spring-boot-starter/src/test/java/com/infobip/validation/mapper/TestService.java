@@ -1,4 +1,4 @@
-package com.infobip.validation;
+package com.infobip.validation.mapper;
 
 import javax.validation.constraints.NotNull;
 
