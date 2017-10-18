@@ -4,7 +4,6 @@ import com.infobip.validation.TestBase;
 import com.infobip.validation.sequences.ExpensiveSequence;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;

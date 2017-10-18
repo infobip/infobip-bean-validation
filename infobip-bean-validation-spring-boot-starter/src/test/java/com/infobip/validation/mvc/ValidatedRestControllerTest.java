@@ -27,7 +27,7 @@ public class ValidatedRestControllerTest extends TestBase {
         Response response = RestAssured.with()
                                        .queryParam("bar", 1)
                                        .get("/bar")
-                                       .thenReturn();;
+                                       .thenReturn();
 
         // then
         then(response.getStatusCode()).isEqualTo(200);

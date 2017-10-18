@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import static org.mockito.Mockito.mock;
 
 @Configuration
-public class CustomConstraintViolationExceptionMapperConfigration {
+public class CustomConstraintViolationExceptionMapperConfiguration {
 
     @Bean
     public CustomValidatedService testService() {
