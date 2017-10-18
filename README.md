@@ -25,6 +25,7 @@ Library which provides new features on top of Hibernate Validator and Spring Boo
 
  - Auto configuration - no manual configuration required
  - predefined validation groups - Create, Update, Delete
+ - predefined validation sequence - ExpensiveSequence
  - Out of the box composed annotations: @ValidatedService, @ValidatedRestController
  
 ### <a name="ConstraintViolationExceptionMapping"></a> ConstraintViolationException mapping:
@@ -96,7 +97,7 @@ public class FileNameValidator implements SimpleConstraintValidator<FileName, St
 
 ### <a name="ValidatorBeanInjection"></a> Validator bean injection:
 
-This feature is provided by Spring and details can be found in [official Spring documenation](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#validation-beanvalidation-spring-constraints).
+This feature is provided by Spring and details can be found in [official Spring documentation](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#validation-beanvalidation-spring-constraints).
 Example:
 
 ```java
