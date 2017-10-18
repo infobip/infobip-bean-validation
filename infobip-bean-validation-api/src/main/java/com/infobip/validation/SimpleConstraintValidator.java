@@ -15,7 +15,7 @@ public interface SimpleConstraintValidator<A extends Annotation, T> extends Cons
     @Override
     default boolean isValid(T value, ConstraintValidatorContext context) {
 
-        if(value == null) {
+        if (value == null) {
             return true;
         }
 

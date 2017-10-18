@@ -1,8 +1,8 @@
 package com.infobip.validation;
 
+import com.infobip.validation.api.HibernateValidatorConfigurationStrategy;
 import org.hibernate.validator.HibernateValidatorConfiguration;
 import org.hibernate.validator.cfg.ConstraintMapping;
-import com.infobip.validation.api.HibernateValidatorConfigurationStrategy;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import javax.validation.Configuration;
