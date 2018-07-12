@@ -101,6 +101,7 @@ This feature is provided by Spring and details can be found in [official Spring 
 Example:
 
 ```java
+@Component
 public class ValidExpirationTimeValidator implements SimpleConstraintValidator<ValidExpirationTime, Date> {
  
     private final Clock clock;
