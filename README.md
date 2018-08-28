@@ -142,7 +142,7 @@ public @interface MustNotBeTopSecret {
 }
 ```
 Validator:
-```
+```java
 @Component
 public class MustNotBeTopSecretValidator implements ConstraintValidator<MustNotBeTopSecret, String> {
  
