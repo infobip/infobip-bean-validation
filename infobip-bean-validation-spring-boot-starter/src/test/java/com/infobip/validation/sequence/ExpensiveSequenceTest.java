@@ -2,7 +2,7 @@ package com.infobip.validation.sequence;
 
 import com.infobip.validation.TestBase;
 import com.infobip.validation.sequences.ExpensiveSequence;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintViolation;
@@ -17,7 +17,7 @@ public class ExpensiveSequenceTest extends TestBase {
     private Validator validator;
 
     @Test
-    public void shouldValidateExpensiveConstraintIfDefaultValid() throws Exception {
+    void shouldValidateExpensiveConstraintIfDefaultValid() {
         // given
         ExpensiveValidationModel givenModel = new ExpensiveValidationModel("", null);
 
@@ -31,7 +31,7 @@ public class ExpensiveSequenceTest extends TestBase {
     }
 
     @Test
-    public void shouldNotValidateExpensiveConstraintIfDefaultNotValid() throws Exception {
+    void shouldNotValidateExpensiveConstraintIfDefaultNotValid() {
         // given
         ExpensiveValidationModel givenModel = new ExpensiveValidationModel(null, null);
 

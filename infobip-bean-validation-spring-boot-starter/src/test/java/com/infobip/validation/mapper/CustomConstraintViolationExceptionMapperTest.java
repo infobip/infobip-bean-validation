@@ -1,19 +1,22 @@
 package com.infobip.validation.mapper;
 
 import com.infobip.validation.api.ConstraintViolationExceptionMapper;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.mockito.BDDMockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.TestConstructor;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.catchThrowable;
 import static org.assertj.core.api.BDDAssertions.then;
+import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 import static org.mockito.Matchers.any;
 
-@RunWith(SpringRunner.class)
+@TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
+@TestInstance(PER_CLASS)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CustomConstraintViolationExceptionMapperTest {
 
@@ -24,7 +27,7 @@ public class CustomConstraintViolationExceptionMapperTest {
     private CustomValidatedService customValidatedService;
 
     @Test
-    public void shouldUseCustomConstraintViolationExceptionMapper() {
+    void shouldUseCustomConstraintViolationExceptionMapper() {
 
         Throwable thrown = catchThrowable(() -> customValidatedService.requireNonNull(null));
 
