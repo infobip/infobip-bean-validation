@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.ConstraintViolationException;
 import javax.validation.constraints.Max;
 
-@ValidatedRestController("/bar")
+@ValidatedRestController
 public class FooController {
 
-    @GetMapping
+    @GetMapping("/bar")
     public void get(@RequestParam(required = false) @Max(1) Integer bar) {
     }
 
