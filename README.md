@@ -1,6 +1,6 @@
 # Infobip Bean Validation
 
-[![Build Status](https://travis-ci.org/infobip/infobip-bean-validation.svg?branch=master)](https://travis-ci.org/infobip/infobip-bean-validation)
+![](https://github.com/infobip/infobip-bean-validation/workflows/maven/badge.svg)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.infobip/infobip-bean-validation-spring-boot-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.infobip/infobip-bean-validation-spring-boot-starter)
 [![Coverage Status](https://coveralls.io/repos/github/infobip/infobip-bean-validation/badge.svg?branch=master)](https://coveralls.io/github/infobip/infobip-bean-validation?branch=master)
 
