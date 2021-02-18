@@ -57,7 +57,7 @@
 
 	<properties>
 		<!-- DEPENDENCY VERSIONS -->
-		<spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+		<spring-boot.version>2.4.2</spring-boot.version>
 
 		<!-- PLUGIN VERSIONS -->
 		<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
