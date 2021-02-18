@@ -1,6 +1,7 @@
 package com.infobip.validation.multiple;
 
 import com.infobip.validation.TestBase;
+import lombok.AllArgsConstructor;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -14,16 +15,12 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.never;
 
+@AllArgsConstructor
 public class MultipleValidatorsTest extends TestBase {
 
-    @MockBean
-    private Consumer<Integer> integerConsumer;
-
-    @MockBean
-    private Consumer<Long> longConsumer;
-
-    @Autowired
-    private Validator validator;
+    private final Consumer<Integer> integerConsumer;
+    private final Consumer<Long> longConsumer;
+    private final Validator validator;
 
     @AfterEach
     void tearDown() {
