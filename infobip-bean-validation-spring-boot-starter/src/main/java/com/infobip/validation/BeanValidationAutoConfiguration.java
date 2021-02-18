@@ -46,7 +46,7 @@ public class BeanValidationAutoConfiguration {
         HibernateValidatorConfigurationStrategy strategy = Optional.ofNullable(hibernateValidatorConfigurationStrategy)
                                                                    .orElseGet(() -> configuration -> {
                                                                    });
-        List<? extends ConstraintValidator> validators = Optional.ofNullable(this.validators)
+        List<? extends ConstraintValidator<?, ?>> validators = Optional.ofNullable(this.validators)
                                                                  .orElseGet(Collections::emptyList);
         return new CustomLocalValidatorFactoryBean(strategy, validators);
     }
