@@ -12,7 +12,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({FIELD})
 @Retention(RUNTIME)
 @Documented
-@interface CustomValidation {
+@interface FirstCustomValidation {
 
     String message() default "";
 

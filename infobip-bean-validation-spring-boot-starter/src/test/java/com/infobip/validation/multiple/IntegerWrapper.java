@@ -5,6 +5,6 @@ import lombok.Value;
 @Value
 class IntegerWrapper {
 
-    @CustomValidation
+    @FirstCustomValidation
     private final Integer value;
 }

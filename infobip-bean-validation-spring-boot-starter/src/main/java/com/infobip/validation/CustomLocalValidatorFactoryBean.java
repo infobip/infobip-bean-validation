@@ -44,7 +44,9 @@ class CustomLocalValidatorFactoryBean extends LocalValidatorFactoryBean {
                                List<? extends ConstraintValidator<? extends Annotation, ?>> validators) {
         ConstraintDefinitionContext<? extends Annotation> definition = constraintMapping.constraintDefinition(
                 annotation);
-        validators.forEach(validator -> definition.validatedBy(getValidatorClass(validator)));
+        validators.stream()
+                  .filter(validator -> extractValidationAnnotation(validator).equals(annotation))
+                  .forEach(validator -> definition.validatedBy(getValidatorClass(validator)));
     }
 
     @SuppressWarnings("unchecked")
