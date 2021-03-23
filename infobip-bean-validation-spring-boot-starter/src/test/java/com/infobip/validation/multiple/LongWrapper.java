@@ -5,6 +5,6 @@ import lombok.Value;
 @Value
 class LongWrapper {
 
-    @CustomValidation
+    @FirstCustomValidation
     private final Long value;
 }

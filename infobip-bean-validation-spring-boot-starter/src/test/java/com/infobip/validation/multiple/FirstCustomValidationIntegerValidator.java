@@ -8,13 +8,13 @@ import java.util.function.Consumer;
 
 @Component
 @AllArgsConstructor
-public class CustomValidationLongValidator implements SimpleConstraintValidator<CustomValidation, Long> {
+public class FirstCustomValidationIntegerValidator implements SimpleConstraintValidator<FirstCustomValidation, Integer> {
 
-    private final Consumer<Long> longConsumer;
+    private final Consumer<Integer> integerConsumer;
 
     @Override
-    public boolean isValid(Long value) {
-        longConsumer.accept(value);
+    public boolean isValid(Integer value) {
+        integerConsumer.accept(value);
         return true;
     }
 }
