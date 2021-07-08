@@ -58,7 +58,7 @@
 
 	<properties>
 		<!-- DEPENDENCY VERSIONS -->
-		<spring-boot.version>2.4.2</spring-boot.version>
+		<spring-boot.version>2.5.2</spring-boot.version>
 
 		<!-- PLUGIN VERSIONS -->
 		<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -185,7 +185,7 @@
 		<repository>
 			<id>ossrh</id>
 			<name>SonatypeReleases</name>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
 </project>
