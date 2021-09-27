@@ -28,7 +28,7 @@ public class MultipleValidatorsTest extends TestBase {
     void shouldValidateInteger() {
 
         // given
-        Integer givenValue = 1;
+        var givenValue = 1;
 
         // when
         validator.validate(new IntegerWrapper(givenValue));
@@ -42,7 +42,7 @@ public class MultipleValidatorsTest extends TestBase {
     void shouldValidateLong() {
 
         // given
-        long givenValue = 2L;
+        var givenValue = 2L;
 
         // when
         validator.validate(new LongWrapper(givenValue));

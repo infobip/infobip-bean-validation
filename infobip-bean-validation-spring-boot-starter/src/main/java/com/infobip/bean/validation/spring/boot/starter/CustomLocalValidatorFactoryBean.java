@@ -28,9 +28,9 @@ class CustomLocalValidatorFactoryBean extends LocalValidatorFactoryBean {
     @Override
     protected void postProcessConfiguration(Configuration<?> configuration) {
         super.postProcessConfiguration(configuration);
-        HibernateValidatorConfiguration hibernateConfiguration = (HibernateValidatorConfiguration) configuration;
+        var hibernateConfiguration = (HibernateValidatorConfiguration) configuration;
 
-        ConstraintMapping constraintMapping = hibernateConfiguration.createConstraintMapping();
+        var constraintMapping = hibernateConfiguration.createConstraintMapping();
         validators.stream()
                   .collect(Collectors.groupingBy(this::extractValidationAnnotation))
                   .forEach((key, value) -> addConstraint(constraintMapping, key, validators));
@@ -42,8 +42,7 @@ class CustomLocalValidatorFactoryBean extends LocalValidatorFactoryBean {
     private void addConstraint(ConstraintMapping constraintMapping,
                                Class<? extends Annotation> annotation,
                                List<? extends ConstraintValidator<? extends Annotation, ?>> validators) {
-        ConstraintDefinitionContext<? extends Annotation> definition = constraintMapping.constraintDefinition(
-                annotation);
+        var definition = constraintMapping.constraintDefinition(annotation);
         validators.stream()
                   .filter(validator -> extractValidationAnnotation(validator).equals(annotation))
                   .forEach(validator -> definition.validatedBy(getValidatorClass(validator)));

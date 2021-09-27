@@ -33,7 +33,7 @@ public class BeanValidationAutoConfiguration {
     public MethodValidationPostProcessor methodValidationPostProcessor(ConstraintViolationExceptionMapper<?> exceptionMapper,
                                                                        ObjectProvider<MethodValidationExcludeFilter> excludeFilters,
                                                                        LocalValidatorFactoryBean localValidatorFactoryBean) {
-        MethodValidationPostProcessor postProcessor = new CustomFilteredMethodValidationPostProcessor(excludeFilters.orderedStream(), exceptionMapper);
+        var postProcessor = new CustomFilteredMethodValidationPostProcessor(excludeFilters.orderedStream(), exceptionMapper);
         postProcessor.setValidator(localValidatorFactoryBean);
         return postProcessor;
     }
@@ -41,7 +41,7 @@ public class BeanValidationAutoConfiguration {
     @Bean
     public LocalValidatorFactoryBean localValidatorFactoryBean(Optional<HibernateValidatorConfigurationStrategy> hibernateValidatorConfigurationStrategy,
                                                                List<? extends ConstraintValidator<?, ?>> validators) {
-        HibernateValidatorConfigurationStrategy strategy = hibernateValidatorConfigurationStrategy.orElseGet(
+        var strategy = hibernateValidatorConfigurationStrategy.orElseGet(
                 () -> configuration -> {
                 });
         return new CustomLocalValidatorFactoryBean(strategy, validators);

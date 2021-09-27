@@ -28,9 +28,9 @@ public class CustomConstraintViolationExceptionMapperTest {
     @Test
     void shouldUseCustomConstraintViolationExceptionMapper() {
 
-        Throwable thrown = catchThrowable(() -> customValidatedService.requireNonNull(null));
+        var actual = catchThrowable(() -> customValidatedService.requireNonNull(null));
 
-        then(thrown).isInstanceOf(RuntimeException.class);
+        then(actual).isInstanceOf(RuntimeException.class);
         BDDMockito.then(mockMapper).should().apply(any());
     }
 }
