@@ -8,6 +8,7 @@ Library which provides new features on top of Hibernate Validator and Spring Boo
 
 ## Contents
 
+1. [Changelog](#Changelog)
 1. [Features and examples](#FeaturesAndExamples)
     * [Basic](#Basic)
     * [SimpleConstraintValidator](#SimpleConstraintValidator)
@@ -15,9 +16,13 @@ Library which provides new features on top of Hibernate Validator and Spring Boo
     * [Hibernate Validator Configuration Strategy](#HibernateValidatorConfigurationStrategy)
     * [Validator bean injection](#ValidatorBeanInjection)
     * [Decoupling of validation annotations and validators](#DecouplingOfValidationAnnotationsAndValidators)
-2. [Requirements](#Requirements)
-3. [Contributing](#Contributing)
-4. [License](#License)
+1. [Requirements](#Requirements)
+1. [Contributing](#Contributing)
+1. [License](#License)
+
+## <a name="Changelog"></a> Changelog
+
+For changes check the [changelog](CHANGELOG.md).
 
 ## <a name="FeaturesAndExamples"></a> Features and examples:
 
