@@ -9,4 +9,7 @@ open module com.infobip.bean.validation.spring.boot.starter {
     requires spring.beans;
     requires spring.core;
     requires spring.web;
+
+    exports com.infobip.bean.validation.spring.boot.starter;
+    exports com.infobip.bean.validation.spring.boot.starter.api;
 }
