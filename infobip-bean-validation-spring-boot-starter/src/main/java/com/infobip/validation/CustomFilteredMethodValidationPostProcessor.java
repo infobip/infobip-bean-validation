@@ -1,16 +1,14 @@
 package com.infobip.validation;
 
+import java.util.function.Supplier;
+import java.util.stream.Stream;
+
 import com.infobip.validation.api.ConstraintViolationExceptionMapper;
+import jakarta.validation.Validator;
 import org.aopalliance.aop.Advice;
 import org.springframework.boot.validation.beanvalidation.FilteredMethodValidationPostProcessor;
 import org.springframework.boot.validation.beanvalidation.MethodValidationExcludeFilter;
 
-import jakarta.validation.Validator;
-
-import java.util.function.Supplier;
-import java.util.stream.Stream;
-
-@SuppressWarnings("serial")
 class CustomFilteredMethodValidationPostProcessor extends FilteredMethodValidationPostProcessor {
 
     private final ConstraintViolationExceptionMapper<?> constraintViolationExceptionMapper;

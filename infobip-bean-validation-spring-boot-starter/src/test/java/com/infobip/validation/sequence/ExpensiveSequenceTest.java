@@ -1,15 +1,12 @@
 package com.infobip.validation.sequence;
 
+import static org.assertj.core.api.BDDAssertions.then;
+
 import com.infobip.validation.TestBase;
 import com.infobip.validation.sequences.ExpensiveSequence;
+import jakarta.validation.Validator;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.Validator;
-import java.util.Set;
-
-import static org.assertj.core.api.BDDAssertions.then;
 
 public class ExpensiveSequenceTest extends TestBase {
 
@@ -19,10 +16,10 @@ public class ExpensiveSequenceTest extends TestBase {
     @Test
     void shouldValidateExpensiveConstraintIfDefaultValid() {
         // given
-        ExpensiveValidationModel givenModel = new ExpensiveValidationModel("", null);
+        var givenModel = new ExpensiveValidationModel("", null);
 
         // when
-        Set<ConstraintViolation<ExpensiveValidationModel>> actual =
+        var actual =
                 validator.validate(givenModel, ExpensiveSequence.class);
 
         // then
@@ -33,10 +30,10 @@ public class ExpensiveSequenceTest extends TestBase {
     @Test
     void shouldNotValidateExpensiveConstraintIfDefaultNotValid() {
         // given
-        ExpensiveValidationModel givenModel = new ExpensiveValidationModel(null, null);
+        var givenModel = new ExpensiveValidationModel(null, null);
 
         // when
-        Set<ConstraintViolation<ExpensiveValidationModel>> actual =
+        var actual =
                 validator.validate(givenModel, ExpensiveSequence.class);
 
         // then
