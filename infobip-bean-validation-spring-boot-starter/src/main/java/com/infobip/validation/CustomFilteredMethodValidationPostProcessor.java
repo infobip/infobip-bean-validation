@@ -5,7 +5,9 @@ import org.aopalliance.aop.Advice;
 import org.springframework.boot.validation.beanvalidation.FilteredMethodValidationPostProcessor;
 import org.springframework.boot.validation.beanvalidation.MethodValidationExcludeFilter;
 
-import javax.validation.Validator;
+import jakarta.validation.Validator;
+
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 @SuppressWarnings("serial")
@@ -20,11 +22,7 @@ class CustomFilteredMethodValidationPostProcessor extends FilteredMethodValidati
     }
 
     @Override
-    protected Advice createMethodValidationAdvice(Validator validator) {
-
-        if (validator == null) {
-            return new CustomMethodValidationInterceptor(constraintViolationExceptionMapper);
-        }
+    protected Advice createMethodValidationAdvice(Supplier<Validator> validator) {
 
         return new CustomMethodValidationInterceptor(validator, constraintViolationExceptionMapper);
     }

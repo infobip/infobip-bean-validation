@@ -7,8 +7,8 @@ import org.hibernate.validator.cfg.context.ConstraintDefinitionContext;
 import org.springframework.core.ResolvableType;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
-import javax.validation.Configuration;
-import javax.validation.ConstraintValidator;
+import jakarta.validation.Configuration;
+import jakarta.validation.ConstraintValidator;
 import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.stream.Collectors;

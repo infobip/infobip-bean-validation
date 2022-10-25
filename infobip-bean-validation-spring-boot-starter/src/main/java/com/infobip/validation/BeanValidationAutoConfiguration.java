@@ -14,8 +14,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintViolationException;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintViolationException;
 import java.util.*;
 
 @AutoConfigureBefore(ValidationAutoConfiguration.class)

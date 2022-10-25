@@ -5,8 +5,8 @@ import com.infobip.validation.sequences.ExpensiveSequence;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validator;
 import java.util.Set;
 
 import static org.assertj.core.api.BDDAssertions.then;

@@ -1,11 +1,13 @@
 package com.infobip.validation;
 
+import java.util.function.Supplier;
+
 import com.infobip.validation.api.ConstraintViolationExceptionMapper;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.validation.beanvalidation.MethodValidationInterceptor;
 
-import javax.validation.ConstraintViolationException;
-import javax.validation.Validator;
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Validator;
 
 class CustomMethodValidationInterceptor extends MethodValidationInterceptor {
 
@@ -15,7 +17,7 @@ class CustomMethodValidationInterceptor extends MethodValidationInterceptor {
         this.constraintViolationExceptionMapper = constraintViolationExceptionMapper;
     }
 
-    public CustomMethodValidationInterceptor(Validator validator,
+    public CustomMethodValidationInterceptor(Supplier<Validator> validator,
                                              ConstraintViolationExceptionMapper<?> constraintViolationExceptionMapper) {
         super(validator);
         this.constraintViolationExceptionMapper = constraintViolationExceptionMapper;
