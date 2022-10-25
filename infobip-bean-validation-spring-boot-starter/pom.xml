@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.infobip</groupId>
 		<artifactId>infobip-bean-validation</artifactId>
-		<version>2.1.1-SNAPSHOT</version>
+		<version>3.0.0-M2</version>
 	</parent>
 
 	<artifactId>infobip-bean-validation-spring-boot-starter</artifactId>
