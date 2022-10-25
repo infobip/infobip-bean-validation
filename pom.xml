@@ -4,7 +4,7 @@
 
 	<groupId>com.infobip</groupId>
 	<artifactId>infobip-bean-validation</artifactId>
-	<version>3.0.0-SNAPSHOT</version>
+	<version>3.0.0-M1</version>
 	<packaging>pom</packaging>
 
 	<name>Infobip Bean Validation</name>
@@ -33,7 +33,7 @@
 		<url>https://github.com/infobip/infobip-bean-validation.git</url>
 		<connection>scm:git:git://github.com:infobip/infobip-bean-validation.git</connection>
 		<developerConnection>scm:git:git@github.com:infobip/infobip-bean-validation.git</developerConnection>
-	  <tag>infobip-bean-validation-2.0.4-SNAPSHOT</tag>
+	  <tag>infobip-bean-validation-3.0.0-M1</tag>
   </scm>
 
 	<developers>
