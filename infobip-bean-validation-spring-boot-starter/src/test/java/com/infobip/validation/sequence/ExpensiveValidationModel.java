@@ -2,7 +2,7 @@ package com.infobip.validation.sequence;
 
 import com.infobip.validation.sequences.Expensive;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 public class ExpensiveValidationModel {
 

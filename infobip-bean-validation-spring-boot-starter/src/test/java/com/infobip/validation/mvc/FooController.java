@@ -4,8 +4,8 @@ import com.infobip.validation.api.ValidatedRestController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolationException;
-import javax.validation.constraints.Max;
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.constraints.Max;
 
 @ValidatedRestController
 public class FooController {

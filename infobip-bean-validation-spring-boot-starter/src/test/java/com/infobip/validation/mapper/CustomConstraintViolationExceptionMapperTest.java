@@ -1,5 +1,10 @@
 package com.infobip.validation.mapper;
 
+import static org.assertj.core.api.Assertions.catchThrowable;
+import static org.assertj.core.api.BDDAssertions.then;
+import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
+import static org.mockito.ArgumentMatchers.any;
+
 import com.infobip.validation.api.ConstraintViolationExceptionMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -8,12 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.TestConstructor;
-import org.springframework.test.context.junit4.SpringRunner;
-
-import static org.assertj.core.api.Assertions.catchThrowable;
-import static org.assertj.core.api.BDDAssertions.then;
-import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
-import static org.mockito.Matchers.any;
 
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 @TestInstance(PER_CLASS)
@@ -29,7 +28,7 @@ public class CustomConstraintViolationExceptionMapperTest {
     @Test
     void shouldUseCustomConstraintViolationExceptionMapper() {
 
-        Throwable thrown = catchThrowable(() -> customValidatedService.requireNonNull(null));
+        var thrown = catchThrowable(() -> customValidatedService.requireNonNull(null));
 
         then(thrown).isInstanceOf(RuntimeException.class);
         BDDMockito.then(mockMapper).should().apply(any());

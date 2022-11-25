@@ -1,7 +1,12 @@
 package com.infobip.validation;
 
+import java.util.List;
+import java.util.Optional;
+
 import com.infobip.validation.api.ConstraintViolationExceptionMapper;
 import com.infobip.validation.api.HibernateValidatorConfigurationStrategy;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintViolationException;
 import org.hibernate.validator.HibernateValidatorConfiguration;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
@@ -13,10 +18,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
-
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintViolationException;
-import java.util.*;
 
 @AutoConfigureBefore(ValidationAutoConfiguration.class)
 @ConditionalOnClass(HibernateValidatorConfiguration.class)
@@ -33,7 +34,7 @@ public class BeanValidationAutoConfiguration {
     public MethodValidationPostProcessor methodValidationPostProcessor(ConstraintViolationExceptionMapper<?> exceptionMapper,
                                                                        ObjectProvider<MethodValidationExcludeFilter> excludeFilters,
                                                                        LocalValidatorFactoryBean localValidatorFactoryBean) {
-        MethodValidationPostProcessor postProcessor = new CustomFilteredMethodValidationPostProcessor(excludeFilters.orderedStream(), exceptionMapper);
+        var postProcessor = new CustomFilteredMethodValidationPostProcessor(excludeFilters.orderedStream(), exceptionMapper);
         postProcessor.setValidator(localValidatorFactoryBean);
         return postProcessor;
     }
@@ -41,9 +42,9 @@ public class BeanValidationAutoConfiguration {
     @Bean
     public LocalValidatorFactoryBean localValidatorFactoryBean(Optional<HibernateValidatorConfigurationStrategy> hibernateValidatorConfigurationStrategy,
                                                                List<? extends ConstraintValidator<?, ?>> validators) {
-        HibernateValidatorConfigurationStrategy strategy = hibernateValidatorConfigurationStrategy.orElseGet(
-                () -> configuration -> {
-                });
+        var strategy = hibernateValidatorConfigurationStrategy.orElseGet(() -> configuration -> {
+        });
         return new CustomLocalValidatorFactoryBean(strategy, validators);
     }
+
 }

@@ -1,19 +1,15 @@
 package com.infobip.validation.multiple;
 
+import static org.mockito.BDDMockito.then;
+
+import java.util.function.Consumer;
+
 import com.infobip.validation.TestBase;
+import jakarta.validation.Validator;
 import lombok.AllArgsConstructor;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
-
-import javax.validation.Validator;
-import java.util.function.Consumer;
-
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.BDDMockito.then;
-import static org.mockito.Mockito.never;
 
 @AllArgsConstructor
 public class MultipleValidatorsTest extends TestBase {
@@ -45,7 +41,7 @@ public class MultipleValidatorsTest extends TestBase {
     void shouldValidateLong() {
 
         // given
-        long givenValue = 2L;
+        var givenValue = 2L;
 
         // when
         validator.validate(new LongWrapper(givenValue));

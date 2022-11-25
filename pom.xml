@@ -33,7 +33,7 @@
 		<url>https://github.com/infobip/infobip-bean-validation.git</url>
 		<connection>scm:git:git://github.com:infobip/infobip-bean-validation.git</connection>
 		<developerConnection>scm:git:git@github.com:infobip/infobip-bean-validation.git</developerConnection>
-	  <tag>infobip-bean-validation-2.0.4-SNAPSHOT</tag>
+	  <tag>infobip-bean-validation-3.0.0-SNAPSHOT</tag>
   </scm>
 
 	<developers>
@@ -58,25 +58,29 @@
 
 	<properties>
 		<!-- DEPENDENCY VERSIONS -->
-		<spring-boot.version>2.5.2</spring-boot.version>
+		<spring-boot.version>3.0.0</spring-boot.version>
 
 		<!-- PLUGIN VERSIONS -->
-		<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
-		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
-		<jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
-		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-		<maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
-		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-		<maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
+		<jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
+		<maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+		<maven-javadoc-plugin.version>3.3.0</maven-javadoc-plugin.version>
+		<maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>3.0.0-M7</maven-failsafe-plugin.version>
 
 		<!-- OTHER PROPERTIES -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>jakarta.servlet</groupId>
+				<artifactId>jakarta.servlet-api</artifactId>
+				<version>5.0.0</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
@@ -116,8 +120,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
+					<release>${java.version}</release>
 					<compilerArgument>-parameters</compilerArgument>
 					<testCompilerArgument>-parameters</testCompilerArgument>
 					<encoding>utf8</encoding>
@@ -147,6 +150,13 @@
 				<groupId>org.eluder.coveralls</groupId>
 				<artifactId>coveralls-maven-plugin</artifactId>
 				<version>${coveralls-maven-plugin.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>javax.xml.bind</groupId>
+						<artifactId>jaxb-api</artifactId>
+						<version>2.3.1</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>

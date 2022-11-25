@@ -1,17 +1,16 @@
 package com.infobip.validation;
 
-import com.infobip.validation.api.HibernateValidatorConfigurationStrategy;
-import org.hibernate.validator.HibernateValidatorConfiguration;
-import org.hibernate.validator.cfg.ConstraintMapping;
-import org.hibernate.validator.cfg.context.ConstraintDefinitionContext;
-import org.springframework.core.ResolvableType;
-import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
-
-import javax.validation.Configuration;
-import javax.validation.ConstraintValidator;
 import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.infobip.validation.api.HibernateValidatorConfigurationStrategy;
+import jakarta.validation.Configuration;
+import jakarta.validation.ConstraintValidator;
+import org.hibernate.validator.HibernateValidatorConfiguration;
+import org.hibernate.validator.cfg.ConstraintMapping;
+import org.springframework.core.ResolvableType;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 class CustomLocalValidatorFactoryBean extends LocalValidatorFactoryBean {
 
@@ -27,9 +26,9 @@ class CustomLocalValidatorFactoryBean extends LocalValidatorFactoryBean {
     @Override
     protected void postProcessConfiguration(Configuration<?> configuration) {
         super.postProcessConfiguration(configuration);
-        HibernateValidatorConfiguration hibernateConfiguration = (HibernateValidatorConfiguration) configuration;
+        var hibernateConfiguration = (HibernateValidatorConfiguration) configuration;
 
-        ConstraintMapping constraintMapping = hibernateConfiguration.createConstraintMapping();
+        var constraintMapping = hibernateConfiguration.createConstraintMapping();
         validators.stream()
                   .collect(Collectors.groupingBy(this::extractValidationAnnotation))
                   .entrySet()
@@ -42,7 +41,7 @@ class CustomLocalValidatorFactoryBean extends LocalValidatorFactoryBean {
     private void addConstraint(ConstraintMapping constraintMapping,
                                Class<? extends Annotation> annotation,
                                List<? extends ConstraintValidator<? extends Annotation, ?>> validators) {
-        ConstraintDefinitionContext<? extends Annotation> definition = constraintMapping.constraintDefinition(
+        var definition = constraintMapping.constraintDefinition(
                 annotation);
         validators.stream()
                   .filter(validator -> extractValidationAnnotation(validator).equals(annotation))
