@@ -19,16 +19,19 @@ Library which provides new features on top of Hibernate Validator and Spring Boo
 3. [Contributing](#Contributing)
 4. [License](#License)
 
-## <a name="FeaturesAndExamples"></a> Features and examples:
+<a id="FeaturesAndExamples"></a>
+##  Features and examples:
 
-### <a name="Basic"></a> Basic:
+<a id="Basic"></a>
+### Basic:
 
  - Auto configuration - no manual configuration required
  - predefined validation groups - Create, Update, Delete
  - predefined validation sequence - ExpensiveSequence
  - Out of the box composed annotations: @ValidatedService, @ValidatedRestController
- 
-### <a name="ConstraintViolationExceptionMapping"></a> ConstraintViolationException mapping:
+
+<a id="ConstraintViolationExceptionMapping"></a>
+###  ConstraintViolationException mapping:
 
 To remap all ConstraintViolationExceptions to a custom exception simply declare a bean of ConstraintViolationExceptionMapper type:
 
@@ -39,7 +42,8 @@ public ConstraintViolationExceptionMapper<IllegalArgumentException> constraintVi
 }
 ```
 
-### <a name="HibernateValidatorConfigurationStrategy"></a> Hibernate Validator Configuration Strategy:
+<a id="HibernateValidatorConfigurationStrategy"></a>
+### Hibernate Validator Configuration Strategy:
 
 By defining a bean of type HibernateConfigurationStrategy you can programmatically alter Hibernate Validator configuration:
 
@@ -50,7 +54,8 @@ public HibernateValidatorConfigurationStrategy hibernateValidatorConfigurationSt
 }
 ```
 
-### <a name="SimpleConstraintValidator"></a> SimpleConstraintValidator:
+<a id="SimpleConstraintValidator"></a>
+### SimpleConstraintValidator:
 Bean Validation's `ConstraintValidator` defines two abstract methods, `initialize(A constraintAnnotation)` and 
 `isValid(T value, ConstraintValidatorContext context)`.
 For most cases, `initialize` is not used and is implemented as empty method. Also, `isValid` expects you to treat null 
@@ -95,7 +100,8 @@ public class FileNameValidator implements SimpleConstraintValidator<FileName, St
 }
 ```
 
-### <a name="ValidatorBeanInjection"></a> Validator bean injection:
+<a id="ValidatorBeanInjection"></a>
+### Validator bean injection:
 
 This feature is provided by Spring and details can be found in [official Spring documentation](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#validation-beanvalidation-spring-constraints).
 Example:
@@ -118,7 +124,8 @@ public class ValidExpirationTimeValidator implements SimpleConstraintValidator<V
 }
 ```
 
-### <a name="DecouplingOfValidationAnnotationsAndValidators"></a> Decoupling of validation annotations and validators:
+<a id="DecouplingOfValidationAnnotationsAndValidators"></a>
+### Decoupling of validation annotations and validators:
 
 This feature is provided by Hibernate Validator and details can be found in [official Hibernate Validator documentation](https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-programmatic-constraint-definition).
 Used for use cases where you don't want to provide a default implementation for your custom validation annotation and want to register it programmatically. For example, validator and validation annotation are in different artifacts.
@@ -168,18 +175,21 @@ public HibernateConfigurationStrategy hibernateConfigurationStrategy() {
 }
 ```
 
-## <a name="Requirements"></a> Requirements:
+<a id="Requirements"></a>
+##  Requirements:
 
-- Java 8
+- Java 17
 - Hibernate Validator
 - Spring Boot (without Boot you will have to import BeanValidationAutoConfiguration manually)
 
-## <a name="Contributing"></a> Contributing
+<a id="Contributing"></a>
+## Contributing
 
 If you have an idea for a new feature or want to report a bug please use the issue tracker.
 
 Pull requests are welcome!
 
-## <a name="License"></a> License
+<a id="License"></a>
+## License
 
 This library is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
