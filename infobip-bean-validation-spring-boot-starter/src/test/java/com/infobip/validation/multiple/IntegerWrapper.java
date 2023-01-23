@@ -1,10 +1,5 @@
 package com.infobip.validation.multiple;
 
-import lombok.Value;
+record IntegerWrapper(@FirstCustomValidation Integer value) {
 
-@Value
-class IntegerWrapper {
-
-    @FirstCustomValidation
-    private final Integer value;
 }

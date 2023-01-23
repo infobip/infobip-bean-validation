@@ -1,10 +1,5 @@
 package com.infobip.validation.multiple;
 
-import lombok.Value;
+record LongWrapper(@FirstCustomValidation Long value) {
 
-@Value
-class LongWrapper {
-
-    @FirstCustomValidation
-    private final Long value;
 }
