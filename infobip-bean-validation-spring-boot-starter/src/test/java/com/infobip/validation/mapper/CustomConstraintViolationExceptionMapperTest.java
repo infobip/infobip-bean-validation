@@ -11,15 +11,15 @@ import org.junit.jupiter.api.TestInstance;
 import org.mockito.BDDMockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.TestConstructor;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 @TestInstance(PER_CLASS)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CustomConstraintViolationExceptionMapperTest {
 
-    @MockBean
+    @MockitoBean
     private ConstraintViolationExceptionMapper<?> mockMapper;
 
     @Autowired

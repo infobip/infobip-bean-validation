@@ -4,7 +4,7 @@
 
 	<groupId>com.infobip</groupId>
 	<artifactId>infobip-bean-validation</artifactId>
-	<version>3.0.1-SNAPSHOT</version>
+	<version>4.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Infobip Bean Validation</name>
@@ -58,7 +58,7 @@
 
 	<properties>
 		<!-- DEPENDENCY VERSIONS -->
-		<spring-boot.version>3.0.0</spring-boot.version>
+		<spring-boot.version>4.0.0-RC2</spring-boot.version>
 
 		<!-- PLUGIN VERSIONS -->
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -79,7 +79,7 @@
 			<dependency>
 				<groupId>jakarta.servlet</groupId>
 				<artifactId>jakarta.servlet-api</artifactId>
-				<version>5.0.0</version>
+				<version>6.1.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>

@@ -8,3 +8,4 @@
 /target
 **/*.class
 /bin
+pom.xml.versionsBackup
