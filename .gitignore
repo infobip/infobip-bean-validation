@@ -9,3 +9,4 @@
 **/*.class
 /bin
 pom.xml.versionsBackup
+.java-version
