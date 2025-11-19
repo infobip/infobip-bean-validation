@@ -9,6 +9,7 @@
 	</parent>
 
 	<artifactId>infobip-bean-validation-spring-boot-starter</artifactId>
+	<name>infobip-bean-validation-spring-boot-starter</name>
 
     <properties>
     </properties>

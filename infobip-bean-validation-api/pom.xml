@@ -9,6 +9,7 @@
 	</parent>
 
 	<artifactId>infobip-bean-validation-api</artifactId>
+	<name>infobip-bean-validation-api</name>
 
 	<dependencies>
 		<dependency>
