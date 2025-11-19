@@ -11,8 +11,6 @@
 	<artifactId>infobip-bean-validation-spring-boot-starter</artifactId>
 
     <properties>
-        <rest-assured.version>5.5.6</rest-assured.version>
-        <groovy.version>4.0.29</groovy.version>
     </properties>
 
 	<dependencies>
@@ -56,19 +54,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jetty</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-        <dependency>
-            <groupId>org.apache.groovy</groupId>
-            <artifactId>groovy</artifactId>
-            <version>${groovy.version}</version>
-        </dependency>
-
-		<dependency>
-			<groupId>io.rest-assured</groupId>
-			<artifactId>rest-assured</artifactId>
-            <version>${rest-assured.version}</version>
 			<scope>test</scope>
 		</dependency>
 

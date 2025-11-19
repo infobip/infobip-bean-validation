@@ -1,11 +1,10 @@
 package com.infobip.validation;
 
-import io.restassured.RestAssured;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInstance;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.TestConstructor;
+import org.springframework.web.client.RestClient;
 
 import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 
@@ -14,11 +13,12 @@ import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 @SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public abstract class TestBase {
 
-    @Value("${local.server.port}")
-    private Integer port;
+    @LocalServerPort
+    protected int port;
 
-    @BeforeEach
-    public void setUpRestAssured() {
-        RestAssured.port = port;
+    protected RestClient restClient() {
+        return RestClient.builder()
+                .baseUrl("http://localhost:" + port)
+                .build();
     }
 }
