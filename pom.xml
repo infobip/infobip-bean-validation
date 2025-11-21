@@ -58,7 +58,7 @@
 
 	<properties>
 		<!-- DEPENDENCY VERSIONS -->
-		<spring-boot.version>4.0.0-RC2</spring-boot.version>
+		<spring-boot.version>4.0.0</spring-boot.version>
 
 		<!-- PLUGIN VERSIONS -->
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
