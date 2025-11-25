@@ -1,7 +1,7 @@
 # Infobip Bean Validation
 
 ![](https://github.com/infobip/infobip-bean-validation/workflows/maven/badge.svg)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.infobip/infobip-bean-validation-spring-boot-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.infobip/infobip-bean-validation-spring-boot-starter)
+[![Maven Central](https://maven-badges.sml.io/sonatype-central/com.infobip/infobip-bean-validation-spring-boot-starter/badge.svg)](https://maven-badges.sml.io/sonatype-central/com.infobip/infobip-bean-validation-spring-boot-starter)
 [![Coverage Status](https://coveralls.io/repos/github/infobip/infobip-bean-validation/badge.svg?branch=master)](https://coveralls.io/github/infobip/infobip-bean-validation?branch=master)
 
 Library which provides new features on top of Hibernate Validator and Spring Boot Validation starter.
